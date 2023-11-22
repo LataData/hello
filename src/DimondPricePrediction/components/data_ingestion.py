@@ -34,6 +34,7 @@ class DataIngestion:
             os.makedirs(os.path.dirname(os.path.join(self.ingestion_config.test_data_path)),exist_ok=True)
             test_data.to_csv(self.ingestion_config.test_data_path,index=False)
             logging.info("Data ingestion done")
+            return(self.ingestion_config.train_data_path,self.ingestion_config.test_data_path)
 
         except Exception as e:
             logging.info("exception during data ingestion")
